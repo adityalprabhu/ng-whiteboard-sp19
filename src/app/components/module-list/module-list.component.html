@@ -1,0 +1,6 @@
+<div class="list-group">
+  <a *ngFor="let module of modules" (click)="selectModule(module)" routerLink=""
+    class="list-group-item list-group-item-action active">
+    {{module.title}}
+  </a>
+</div>

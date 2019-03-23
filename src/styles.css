@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.course-grid-container{
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: left;
+}
+
+.card{
+    min-width: 250px !important;
+    margin-bottom: 30px !important;
+    max-width: 350px !important;
+}
+
+.jumbotron{
+    padding: 10px !important;
+    background-color: #444444 !important;
+    color: #5ED6D0 !important;
+}
