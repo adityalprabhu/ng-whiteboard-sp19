@@ -1,3 +1,14 @@
-<p>
-  topic-pills works!
-</p>
+<div>
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a *ngFor="let topic of topics" (click)="selectTopic(topic)" class="nav-link"
+        [ngClass]="{'active': topic.id == topicId}">
+        {{topic.title}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="mt-4">
+  <app-widget-list></app-widget-list>
+</div>

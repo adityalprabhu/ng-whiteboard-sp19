@@ -1,3 +1,14 @@
-<p>
-  lesson-tabs works!
-</p>
+<div>
+<ul class="nav nav-tabs nav-justified">
+  <li class="nav-item">
+    <a *ngFor="let lesson of lessons" (click)="selectLesson(lesson)" class="nav-link"
+      [ngClass]="{'active': lesson.id == lessonId}">
+      {{lesson.title}}
+    </a>
+  </li>
+</ul>
+</div>
+
+<div class="mt-4">
+  <app-topic-pills></app-topic-pills>
+</div>

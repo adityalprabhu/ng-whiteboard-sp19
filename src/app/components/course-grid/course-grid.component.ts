@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseServiceService } from 'src/app/services/CourseService/course-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-grid',
@@ -7,21 +8,25 @@ import { CourseServiceService } from 'src/app/services/CourseService/course-serv
   styleUrls: ['./course-grid.component.css']
 })
 export class CourseGridComponent implements OnInit {
-  courses : any;
-  constructor(private courseService: CourseServiceService) { }
+  courses: any;
+  private courseId;
+  constructor(private courseService: CourseServiceService, 
+    private router: Router) { }
 
   ngOnInit() {
     this.getAllCourses();
   }
+  
+  getAllCourses() {
+    this.courseService.getAllCourses().subscribe((res) => {
+      // console.log(res)
+      this.courses = res;
+    });
+  }
 
   selectCourse = (course) => {
     // console.log(course);
-  }
-
-  getAllCourses(){
-    this.courseService.getAllCourses().subscribe((res)=>{
-      console.log(res)
-      this.courses = res;
-    })
+    this.courseId = course.id;
+    this.router.navigate([`course/${this.courseId}/module`]);
   }
 }

@@ -1,0 +1,11 @@
+.nav-link{
+    display: inline-block !important;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.active{
+    background: #007bff !important;
+    border-color: #007bff !important;
+    color: #fff !important;
+}
+

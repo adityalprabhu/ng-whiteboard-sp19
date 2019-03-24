@@ -8,4 +8,11 @@ export class ApiUrlsService {
 
     public static findAllModulesURL = environment.domain + "/api/courses/cid/modules";
 
+    public static findAllLessonsURL = environment.domain + "/api/module/mid/lesson";
+
+    public static findAllTopicsURL = environment.domain + "/api/lesson/lid/topic";
+
+    public static findAllWidgetsURL = environment.domain + "/api/topic/tid/widget";
+
+
 }

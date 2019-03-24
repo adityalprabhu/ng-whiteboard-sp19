@@ -1,6 +1,14 @@
-<div class="list-group">
-  <a *ngFor="let module of modules" (click)="selectModule(module)" routerLink=""
-    class="list-group-item list-group-item-action active">
-    {{module.title}}
-  </a>
+<div class="row">
+  <div class="col-4">
+    <div class="list-group">
+      <a *ngFor="let module of modules" (click)="selectModule(module)" class="list-group-item list-group-item-action"
+        [ngClass]="{'active': module.id == moduleId}">
+        {{module.title}}
+      </a>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <app-lesson-tabs></app-lesson-tabs>
+  </div>
 </div>
