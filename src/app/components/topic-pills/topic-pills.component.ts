@@ -10,7 +10,7 @@ import { TopicServiceService } from 'src/app/services/TopicService/topic-service
 })
 export class TopicPillsComponent implements OnInit {
 
-  private topics: any;
+  topics: any;
   private courseId;
   private moduleId;
   private lessonId;

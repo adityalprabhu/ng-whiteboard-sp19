@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ModuleListComponent implements OnInit {
 
-  private modules: any;
+  modules: any;
   private courseId;
   private moduleId;
   private subscription;

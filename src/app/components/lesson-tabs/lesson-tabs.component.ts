@@ -11,7 +11,7 @@ import { LessonServiceService } from 'src/app/services/LessonService/lesson-serv
 })
 export class LessonTabsComponent implements OnInit {
 
-  private lessons: any;
+  lessons: any;
   private courseId;
   private moduleId;
   private lessonId;

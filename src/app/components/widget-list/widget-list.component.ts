@@ -11,7 +11,7 @@ import { WidgetServiceService } from 'src/app/services/WidgetService/widget-serv
 })
 export class WidgetListComponent implements OnInit {
 
-  private widgets: any;
+  widgets: any;
   private courseId;
   private moduleId;
   private lessonId;
