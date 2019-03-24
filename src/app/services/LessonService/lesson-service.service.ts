@@ -7,13 +7,26 @@ import { ApiUrlsService } from '../apiUrlsService';
 })
 export class LessonServiceService {
 
-  getLessonsApiUrl: string;
+  findAllLessonsUrl: string;
+  findLessonsForModuleURL: string;
+  findLessonByIdURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.getLessonsApiUrl = ApiUrlsService.findAllLessonsURL;
+    this.findAllLessonsUrl = ApiUrlsService.findAllLessonsURL;
+    this.findLessonsForModuleURL = ApiUrlsService.findLessonsForModuleURL;
+    this.findLessonByIdURL = ApiUrlsService.findLessonByIdURL;
   }
 
-  public getAllLessons(id) {
-    return this.httpClient.get(this.getLessonsApiUrl.replace('mid', id));
+  public findAllLessons() {
+    return this.httpClient.get(this.findAllLessonsUrl);
   }
+
+  public findLessonsForModule(mid) {
+    return this.httpClient.get(this.findLessonsForModuleURL.replace('mid', mid));
+  }
+
+  public findLessonById(lid) {
+    return this.httpClient.get(this.findLessonByIdURL.replace('lid', lid));
+  }
+  
 }

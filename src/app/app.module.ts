@@ -8,6 +8,11 @@ import { ModuleListComponent } from './components/module-list/module-list.compon
 import { LessonTabsComponent } from './components/lesson-tabs/lesson-tabs.component';
 import { TopicPillsComponent } from './components/topic-pills/topic-pills.component';
 import { WidgetListComponent } from './components/widget-list/widget-list.component';
+import { CourseServiceService } from './services/CourseService/course-service.service';
+import { ModuleServiceService } from './services/ModuleService/module-service.service';
+import { LessonServiceService } from './services/LessonService/lesson-service.service';
+import { TopicServiceService } from './services/TopicService/topic-service.service';
+import { WidgetServiceService } from './services/WidgetService/widget-service.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,13 @@ import { WidgetListComponent } from './components/widget-list/widget-list.compon
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    CourseServiceService,
+    ModuleServiceService,
+    LessonServiceService,
+    TopicServiceService,
+    WidgetServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

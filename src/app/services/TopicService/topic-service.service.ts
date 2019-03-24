@@ -7,13 +7,25 @@ import { ApiUrlsService } from '../apiUrlsService';
 })
 export class TopicServiceService {
 
-  getTopicsApiUrl: string;
+  findAllTopicsURL: string;
+  findTopicsForLessonURL: string;
+  findTopicByIdURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.getTopicsApiUrl = ApiUrlsService.findAllTopicsURL;
+    this.findAllTopicsURL = ApiUrlsService.findAllTopicsURL;
+    this.findTopicsForLessonURL = ApiUrlsService.findTopicsForLessonURL;
+    this.findTopicByIdURL = ApiUrlsService.findTopicByIdURL;
   }
 
-  public getAllTopics(id) {
-    return this.httpClient.get(this.getTopicsApiUrl.replace('lid', id));
+  public findAllTopics() {
+    return this.httpClient.get(this.findAllTopicsURL);
+  }
+
+  public findTopicsForLesson(lid) {
+    return this.httpClient.get(this.findTopicsForLessonURL.replace('lid', lid));
+  }
+
+  public findTopicById(tid) {
+    return this.httpClient.get(this.findTopicByIdURL.replace('tid', tid));
   }
 }

@@ -29,15 +29,15 @@ export class TopicPillsComponent implements OnInit {
       this.topicId = params.topicId;
 
       if(this.lessonId){
-        this.getTopics();
+        this.findAllTopics();
       }
     });
   }
 
-  getTopics() {
+  findAllTopics() {
     // console.log(this.lessonId)
 
-    this.topicService.getAllTopics(this.lessonId).subscribe((res) => {
+    this.topicService.findTopicsForLesson(this.lessonId).subscribe((res) => {
       // console.log(res)
       this.topics = res;
     });

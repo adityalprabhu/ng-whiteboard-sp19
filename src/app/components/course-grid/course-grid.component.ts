@@ -14,11 +14,11 @@ export class CourseGridComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.getAllCourses();
+    this.findAllCourses();
   }
   
-  getAllCourses() {
-    this.courseService.getAllCourses().subscribe((res) => {
+  findAllCourses() {
+    this.courseService.findAllCourses().subscribe((res) => {
       // console.log(res)
       this.courses = res;
     });

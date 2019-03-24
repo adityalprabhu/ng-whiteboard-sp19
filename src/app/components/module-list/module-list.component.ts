@@ -25,13 +25,13 @@ export class ModuleListComponent implements OnInit {
     this.subscription = this.route.params.subscribe(params => {
       this.courseId = params.courseId;
       this.moduleId = params.moduleId;
-      this.getCourse();
+      this.findAllModules();
     });
   }
 
-  getCourse() {
+  findAllModules() {
     // console.log(this.moduleId)
-    this.moduleService.getAllModules(this.courseId).subscribe((res) => {
+    this.moduleService.findModulesForCourse(this.courseId).subscribe((res) => {
       this.modules = res;
     });
 

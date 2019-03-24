@@ -6,13 +6,19 @@ import { ApiUrlsService } from '../apiUrlsService';
 })
 export class CourseServiceService {
 
-  getAllCoursesApiUrl: string; 
+  findAllCoursesApiUrl: string; 
+  findCourseByIdURL: string
 
   constructor(private httpClient: HttpClient,) {
-    this.getAllCoursesApiUrl = ApiUrlsService.findAllCoursesURL;
+    this.findAllCoursesApiUrl = ApiUrlsService.findAllCoursesURL;
+    this.findCourseByIdURL =  ApiUrlsService.findCourseByIdURL;
   }
 
-  public getAllCourses(){
-    return this.httpClient.get(this.getAllCoursesApiUrl);
+  public findAllCourses(){
+    return this.httpClient.get(this.findAllCoursesApiUrl);
+  }
+
+  public findCourseById(cid){
+    return this.httpClient.get(this.findCourseByIdURL.replace('cid', cid));
   }
 }

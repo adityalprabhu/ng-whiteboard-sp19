@@ -31,16 +31,13 @@ export class WidgetListComponent implements OnInit {
       this.topicId = params.topicId;
       
       if(this.topicId){
-        this.getWidgets();
+        this.findAllWidgets();
       }
     });
   }
 
-  getWidgets() {
-    // console.log(this.lessonId)
-
-    this.widgetService.getAllWidgets(this.topicId).subscribe((res) => {
-      // console.log(res)
+  findAllWidgets() {
+    this.widgetService.findWidgetsForTopic(this.topicId).subscribe((res) => {
       this.widgets = res;
     });
 

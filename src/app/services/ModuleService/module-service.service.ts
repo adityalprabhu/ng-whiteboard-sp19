@@ -7,13 +7,26 @@ import { ApiUrlsService } from '../apiUrlsService';
 })
 export class ModuleServiceService {
 
-  getModulesApiUrl: string;
+  findAllModulesURL: string;
+  findModulesForCourseURL: string;
+  findModuleByIdURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.getModulesApiUrl = ApiUrlsService.findAllModulesURL;
+    this.findAllModulesURL = ApiUrlsService.findAllModulesURL;
+    this.findModulesForCourseURL = ApiUrlsService.findModulesForCourseURL;
+    this.findModuleByIdURL = ApiUrlsService.findModuleByIdURL;
+
   }
 
-  public getAllModules(id) {
-    return this.httpClient.get(this.getModulesApiUrl.replace('cid', id));
+  public findAllModules() {
+    return this.httpClient.get(this.findAllModulesURL);
+  }
+
+  public findModulesForCourse(cid) {
+    return this.httpClient.get(this.findModulesForCourseURL.replace('cid', cid));
+  }
+
+  public findModuleById(mid) {
+    return this.httpClient.get(this.findModuleByIdURL.replace('mid', mid));
   }
 }

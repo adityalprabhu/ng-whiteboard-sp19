@@ -7,13 +7,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WidgetServiceService {
 
-  getWidgetsApiUrl: string;
+  findAllWidgetsURL: string;
+  findWidgetsForTopicURL: string;
+  findWidgetByIdURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.getWidgetsApiUrl = ApiUrlsService.findAllWidgetsURL;
+    this.findAllWidgetsURL = ApiUrlsService.findAllWidgetsURL;
+    this.findWidgetsForTopicURL = ApiUrlsService.findWidgetsForTopicURL;
+    this.findWidgetByIdURL = ApiUrlsService.findWidgetByIdURL;
   }
 
-  public getAllWidgets(id) {
-    return this.httpClient.get(this.getWidgetsApiUrl.replace('tid', id));
+  public findAllWidgets() {
+    return this.httpClient.get(this.findAllWidgetsURL);
+  }
+
+  public findWidgetsForTopic(tid) {
+    return this.httpClient.get(this.findWidgetsForTopicURL.replace('tid', tid));
+  }
+
+  public findWidgetById(wid) {
+    return this.httpClient.get(this.findWidgetByIdURL.replace('wid', wid));
   }
 }
